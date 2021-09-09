@@ -1,4 +1,8 @@
 <template>
+    <Counter></Counter>
+    <Counter></Counter>
+    <Counter></Counter>
+
     <HelloWorld />
     <new-component v-bind:price="thePrice"
         v-on:innerClick="handleClickFromNewComponent"></new-component>
@@ -9,6 +13,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import NewComponent from './components/NewComponent.vue'
+import Counter from './components/Counter.vue'
 // .    <- current directory
 // ..   <- parent directory
 
@@ -16,7 +21,8 @@ export default {
     name: 'App',
     components: {
         HelloWorld,
-        "new-component": NewComponent
+        "new-component": NewComponent,
+        Counter
     },
     data: () => ({
         thePrice: 256,
