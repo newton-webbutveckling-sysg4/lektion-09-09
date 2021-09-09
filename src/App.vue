@@ -1,4 +1,5 @@
 <template>
+    <ToggleText></ToggleText>
     <div>
         Klicka för att ändra texten:
         <EditableText
@@ -22,6 +23,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import NewComponent from './components/NewComponent.vue'
 import Counter from './components/Counter.vue'
 import EditableText from './components/EditableText.vue'
+import ToggleText from './components/ToggleText.vue'
 // .    <- current directory
 // ..   <- parent directory
 
@@ -31,7 +33,8 @@ export default {
         HelloWorld,
         "new-component": NewComponent,
         Counter,
-        EditableText
+        EditableText,
+        ToggleText
     },
     data: () => ({
         thePrice: 256,
