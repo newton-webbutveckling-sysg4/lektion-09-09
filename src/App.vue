@@ -1,4 +1,11 @@
 <template>
+    <div>
+        Klicka för att ändra texten:
+        <EditableText
+            v-bind:text="editable"
+            v-on:update="updatedText"></EditableText>
+    </div>
+
     <Counter></Counter>
     <Counter></Counter>
     <Counter></Counter>
@@ -14,6 +21,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import NewComponent from './components/NewComponent.vue'
 import Counter from './components/Counter.vue'
+import EditableText from './components/EditableText.vue'
 // .    <- current directory
 // ..   <- parent directory
 
@@ -22,15 +30,21 @@ export default {
     components: {
         HelloWorld,
         "new-component": NewComponent,
-        Counter
+        Counter,
+        EditableText
     },
     data: () => ({
         thePrice: 256,
-        message: 'No click recorded'
+        message: 'No click recorded',
+        editable: 'Exempel'
     }),
     methods: {
         handleClickFromNewComponent(data) {
             this.message = 'Click recorded, with data: ' + data.message
+        },
+        updatedText(data) {
+            console.log('App: updatedText', data);
+            this.editable = data
         }
     }
 }
